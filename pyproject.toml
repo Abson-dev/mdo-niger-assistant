@@ -1,0 +1,21 @@
+[project]
+name = "mdo-niger-assistant"
+version = "0.1.0"
+description = "AI assistant for Niger's weekly notifiable disease surveillance: what the data show, with their limits."
+readme = "README.md"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore:The anyio.abc.BlockingPortal alias:DeprecationWarning"]
+
+[tool.ruff]
+line-length = 200
+extend-exclude = ["web/static/vendor"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["SIM108"]
+# Scripts put the repository on sys.path before importing the package.
+per-file-ignores = { "ask.py" = ["E402"], "mdo_cli.py" = ["E402"], "web/app.py" = ["E402"], "evals/*.py" = ["E402"], "demo/*.py" = ["E402", "E501"], "docs/*.py" = ["E402"], "mdo_agent/catalog.py" = ["E501"] }

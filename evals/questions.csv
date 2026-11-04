@@ -1,0 +1,25 @@
+id,question,check_call,where,column,must_contain,must_call
+q01,How many meningitis cases were notified in Niger in 2022?,get_disease_trend;disease=Méningite;years=2022,,cases,,get_disease_trend|get_year_overview
+q02,Which region had the highest meningitis incidence in 2022?,rank_places;disease=Méningite;year=2022;top=1,,incidence_per_100k,Zinder,rank_places|get_disease_trend
+q03,Combien de cas de rougeole ont été notifiés dans la région de Zinder en 2019 ?,get_disease_trend;disease=Rougeole;level=region;places=Zinder;years=2019,,cases,Zinder,get_disease_trend|rank_places
+q04,Did confirmed malaria go up in 2024 compared with 2023?,compare_years;disease=Paludisme confirmé;year_a=2023;year_b=2024,,cases_change_pct,week 43|weeks 1-43|weeks 1 to 43,compare_years|get_disease_trend
+q05,Was 2024 a worse year than 2023 for suspected malaria? Compare the totals.,compare_years;disease=Paludisme suspect;year_a=2023;year_b=2024,,cases_2023,week 43|weeks 1-43|weeks 1 to 43,compare_years|get_disease_trend
+q06,What is the trend in malaria since 2015?,,,,positive tests|definition|2021,get_disease_trend|search_data_notes
+q07,How many confirmed malaria deaths were there in 2018?,,,,suspected,get_disease_trend|search_data_notes
+q08,How many severe malnutrition cases were reported in 2023?,,,,2021,get_disease_trend|search_data_notes|list_diseases
+q09,What was the incidence of malaria in pregnancy in 2020?,,,,no data|not available|missing|not reported,get_disease_trend|search_data_notes|list_diseases
+q10,Compare measles in the district of Dogondoutchi between 2015 and 2023.,,,,2017,compare_years|get_disease_trend|search_data_notes|rank_places|list_places
+q11,What share of malaria tests were positive in 2022?,,,,2020,get_malaria_testing|search_data_notes
+q12,What was the test positivity of malaria in 2019?,get_malaria_testing;years=2019,,positivity_pct,,get_malaria_testing
+q13,How complete was district reporting in 2023?,get_reporting;years=2023,,completeness_pct,,get_reporting
+q14,Quelle était la promptitude des rapports en 2024 ?,get_reporting;years=2024,,timeliness_pct,43,get_reporting
+q15,What is Niger's maternal mortality ratio?,,,,not|cannot,get_maternal_deaths|search_data_notes
+q16,How many maternal deaths were notified in 2021?,get_maternal_deaths;years=2021,,deaths_notified,,get_maternal_deaths
+q17,How many district-weeks crossed the WHO epidemic threshold for meningitis in 2024?,get_meningitis_alerts;years=2024;by=year,,epidemic_weeks,whole district|not an official|district level|districts,get_meningitis_alerts
+q18,"Has confirmed malaria really increased since 2017, or could it be chance? Give the estimate.",get_model_result;table=t03_year_irr_long;term=Malaria (confirmed),year=2024,irr,not causal|reporting|testing|associat,get_model_result
+q19,How good are the meningitis forecasts one week ahead?,,,,past|validation,get_model_result|list_model_results
+q20,How many meningitis cases should we expect next week?,,,,cannot|not able|no forecast|ends|stops|not a forecast,
+q21,"How does the DHIS2 extract compare with the workbook for suspected malaria in 2024?",compare_dhis2_2024;disease=Paludisme suspect,,dhis2_cases,37,compare_dhis2_2024
+q22,Do the figures agree with the totals in the source files?,,,,differ,get_validation_checks
+q23,Which month did you see the most deaths among under-fives from cholera?,,,,age|under-five|under five|not available,
+q24,Au cours de quelle semaine la méningite culmine-t-elle habituellement ?,,,,semaine,get_seasonality|get_model_result

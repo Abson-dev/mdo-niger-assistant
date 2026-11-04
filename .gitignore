@@ -1,0 +1,24 @@
+# Generated from the surveillance data, and never in this repository
+/data/
+/demo_data/
+evals/results/
+
+*.csv
+!mdo_agent/data_notes.csv
+!evals/questions.csv
+*.gz
+*.geojson
+*.xls
+*.xlsx
+*.docx
+*.shp
+*.sqlite
+output/
+.env
+.Renviron
+
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.venv/
